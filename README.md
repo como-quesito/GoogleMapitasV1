@@ -1,13 +1,15 @@
 # GoogleMapitasV1 
 Este es un proyecto de geolocalización extremadamente básico. El primer paso es implementra las intrefaces siguientes a tu proyecto de plantilla de
 de google maps:
+
 ´´´
 //Implementra las siguientes dos interfaces
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
 ´´´
- Al  hacer lo anterior te pedira implementar los métodos abstractos, implementalos, al final de tu **MainActivity** verás los siguientes métodos
-
+ Al  hacer lo anterior te pedira implementar los métodos abstractos, implementalos, al final de tu **MainActivity** verás los siguientes métodos.
+ 
+´´´
   @Override
     public void onConnected(Bundle bundle) {
         
@@ -25,6 +27,8 @@ de google maps:
  ´´´
  
  Posteriormente vas a declarar los siguientes dos atributos a tu **MainActivity**
+ 
+ 
  ´´´
  /**
      El siguiente provee el punto de entrada para google play services
