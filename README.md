@@ -7,7 +7,7 @@ de google maps:
         GoogleApiClient.OnConnectionFailedListener {
 ´´´
  Al  hacer lo anterior te pedira implementar los métodos abstractos, implementalos, al final de tu **MainActivity** verás los siguientes métodos
- ´´´
+
   @Override
     public void onConnected(Bundle bundle) {
         
