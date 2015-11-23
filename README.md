@@ -23,7 +23,8 @@ de google maps:
             // Marcador para ecatepec
             LatLng ecatepec = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
 
-            mMap.addMarker(new MarkerOptions().position(ecatepec).title("Latitud:"+mLastLocation.getLatitude()+" Long:"+mLastLocation.getLongitude()));
+            mMap.addMarker(new MarkerOptions().position(ecatepec)
+            .title("Latitud:"+mLastLocation.getLatitude()+" Long:"+mLastLocation.getLongitude()));
             mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(ecatepec));
         } else {
