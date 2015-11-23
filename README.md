@@ -90,7 +90,7 @@ A continuacion vas a implementar los siguientes métodos
     }
 ```
 
-Ya con esto tienes las plantillas d elos principales métodos ahora los vas a rellenar con el siguiente código
+
 
 Al final de tu método **onCreate** vas a invocar el método siguiente.
 ```
