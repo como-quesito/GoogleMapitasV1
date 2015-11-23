@@ -8,16 +8,34 @@ de google maps:
         GoogleApiClient.OnConnectionFailedListener {
 ```
 
- Al  hacer lo anterior te pedira implementar los métodos abstractos, implementalos, al final de tu **MainActivity** verás los siguientes métodos.
+ Al  hacer lo anterior te pedira implementar los métodos abstractos, al final de tu **MainActivity** verás los siguientes métodos, implementalos co el siguiente codigo.
  
 ```
-  @Override
-    public void onConnected(Bundle bundle) {
-        
+  public void onConnected(Bundle bundle) {
+
+        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        if (mLastLocation != null) {
+            Toast.makeText(this,
+                    "latitud:"+ mLastLocation.getLatitude(), Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Longitud"+
+                    mLastLocation.getLongitude(), Toast.LENGTH_LONG).show();
+
+            // Marcador para ecatepec
+            LatLng ecatepec = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+
+            mMap.addMarker(new MarkerOptions().position(ecatepec).title("Latitud:"+mLastLocation.getLatitude()+" Long:"+mLastLocation.getLongitude()));
+            mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(ecatepec));
+        } else {
+            Toast.makeText(this, "Localizacion no detectada", Toast.LENGTH_LONG).show();
+        }
+
     }
 
     @Override
     public void onConnectionSuspended(int i) {
+
+        mGoogleApiClient.connect();
 
     }
 
@@ -54,3 +72,29 @@ de google maps:
 
     }
  ```
+A continuacion vas a implementar los siguientes métodos
+```
+@Override
+    protected void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+    }
+```
+
+Ya con esto tienes las plantillas d elos principales métodos ahora los vas a rellenar con el siguiente código
+
+Al final de tu método **onCreate** vas a invocar el método siguiente.
+```
+buildGoogleApiClient();
+```
+
+
+Listo eso es todo!!.
