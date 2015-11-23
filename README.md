@@ -7,6 +7,7 @@ de google maps:
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
 ´´´
+
  Al  hacer lo anterior te pedira implementar los métodos abstractos, implementalos, al final de tu **MainActivity** verás los siguientes métodos.
  
 ´´´
@@ -39,6 +40,7 @@ de google maps:
      */
     protected Location mLastLocation;
  ´´´
+ 
  Al final de tu clase vas a implementar el siguiente método, el cual sirve para activas la geolocalización por medio de la API 
  que obtuviste de la consola de google, el cual se activa como un servicio cada vez que tu dispositivo se vaya a conectar.
  
